@@ -312,7 +312,7 @@
           code: 24
         },
         forecast: [
-          {code: currentcurrent44, high: 86, low: 70},
+          {code: 44, high: 86, low: 70},
           {code: 44, high: 94, low: 73},
           {code: 4, high: 95, low: 78},
           {code: 24, high: 75, low: 89},
