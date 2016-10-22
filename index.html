@@ -1,12 +1,12 @@
 <!--
  Copyright 2016 Google Inc.
- 
+
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
- 
+
       http://www.apache.org/licenses/LICENSE-2.0
- 
+
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -19,13 +19,24 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+  <link rel="canonical" href="https://exadra37.com/playground/weather-pwa">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather PWA</title>
-  <link rel="stylesheet" type="text/css" href="styles/inline.css">
+  <link rel="stylesheet" type="text/css" href="/playground/weather/styles/inline.css">
 
   <!-- TODO add manifest here -->
-  
+  <link rel="manifest" href="/playground/weather/manifest.json">
+
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Weather PWA on Exadra37 Playground">
+  <link rel="apple-touch-icon" href="/playground/weather/images/icons/icon-152x152.png">
+
+  <!-- For Windows -->
+  <meta name="msapplication-TileImage" content="/playground/weather/images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+
 </head>
 <body>
 
@@ -36,6 +47,10 @@
   </header>
 
   <main class="main">
+    <div id="playground">
+        <h2>Welcome to my Playground</h2>
+        <p>This is a <a href="https://developers.google.com/web/progressive-web-apps/">PWA</a>, the result of <a href="https://codelabs.developers.google.com/codelabs/your-first-pwapp/#0">this Google Tutorial</a>.</p>
+      </div>
     <div class="card cardTemplate weather-forecast" hidden>
       <div class="city-key" hidden></div>
       <div class="card-last-updated" hidden></div>
@@ -165,7 +180,7 @@
   </div>
 
   <!-- Uncomment the line below when ready to test with fake data -->
-  <!--<script src="scripts/app.js" async></script>-->
+  <script src="scripts/app.js" async></script>
 
 </body>
 </html>
