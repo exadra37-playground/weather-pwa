@@ -1,37 +1,25 @@
-// Copyright 2016 Google Inc.
-// 
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-// 
-//      http://www.apache.org/licenses/LICENSE-2.0
-// 
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+var cacheName = 'weather-exadra37-v1';
+var dataCacheName = 'weather-exadra37-data-v1';
 
-var dataCacheName = 'weatherData-v1';
-var cacheName = 'weatherPWA-final-1';
 var filesToCache = [
-  '/',
-  '/index.html',
-  '/scripts/app.js',
-  '/styles/inline.css',
-  '/images/clear.png',
-  '/images/cloudy-scattered-showers.png',
-  '/images/cloudy.png',
-  '/images/fog.png',
-  '/images/ic_add_white_24px.svg',
-  '/images/ic_refresh_white_24px.svg',
-  '/images/partly-cloudy.png',
-  '/images/rain.png',
-  '/images/scattered-showers.png',
-  '/images/sleet.png',
-  '/images/snow.png',
-  '/images/thunderstorm.png',
-  '/images/wind.png'
+  '/playground/weather',
+  '/playground/weather/',
+  '/playground/weather/index.html',
+  '/playground/weather/scripts/app.js',
+  '/playground/weather/styles/inline.css',
+  '/playground/weather/images/clear.png',
+  '/playground/weather/images/cloudy-scattered-showers.png',
+  '/playground/weather/images/cloudy.png',
+  '/playground/weather/images/fog.png',
+  '/playground/weather/images/ic_add_white_24px.svg',
+  '/playground/weather/images/ic_refresh_white_24px.svg',
+  '/playground/weather/images/partly-cloudy.png',
+  '/playground/weather/images/rain.png',
+  '/playground/weather/images/scattered-showers.png',
+  '/playground/weather/images/sleet.png',
+  '/playground/weather/images/snow.png',
+  '/playground/weather/images/thunderstorm.png',
+  '/playground/weather/images/wind.png'
 ];
 
 self.addEventListener('install', function(e) {
@@ -56,16 +44,6 @@ self.addEventListener('activate', function(e) {
       }));
     })
   );
-  /*
-   * Fixes a corner case in which the app wasn't returning the latest data.
-   * You can reproduce the corner case by commenting out the line below and
-   * then doing the following steps: 1) load app for first time so that the
-   * initial New York City data is shown 2) press the refresh button on the
-   * app 3) go offline 4) reload the app. You expect to see the newer NYC
-   * data, but you actually see the initial data. This happens because the
-   * service worker is not yet activated. The code below essentially lets
-   * you activate the service worker faster.
-   */
   return self.clients.claim();
 });
 
